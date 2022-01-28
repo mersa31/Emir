@@ -1,0 +1,25 @@
+local words = {
+    'çk kolaysın',
+    'ez brr',
+    'ben aimbot değilim sen kötüsün',
+    'velet ben lock değilim XDXDXDXD çok kolaysın',
+    'çk kolaysın noob',
+    '.gg/emir on top',
+    'brr',
+    'ekle beni / Emircik! 3499',
+    'HAHAHAHAH Noob Ben Aimbot Değilim Kudurma',
+    'çk kolaysın',
+    'Ez Stomped By Emircik! 3499',
+    'Huh SG Serverden Noob!',
+}
+
+local player = game.Players.LocalPlayer
+local keybind = 'y'
+
+local event = game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest
+
+player:GetMouse().KeyDown:connect(function(key)
+    if key == keybind then
+        event:FireServer(words[math.random(#words)], "All")
+    end
+end)
